@@ -1,0 +1,20 @@
+{
+  "profiles": [
+    {
+      "id": "seo",
+      "name": "SEO",
+      "description": "Search engine optimization research and working documents.",
+      "instructions": [
+        "Include source URLs whenever they are available.",
+        "Prefer updating a stable record ID when continuing the same investigation."
+      ],
+      "tokens": [
+        {
+          "id": "example-bot",
+          "sha256": "REPLACE_WITH_A_64_CHARACTER_SHA256_TOKEN_HASH",
+          "access": "write"
+        }
+      ]
+    }
+  ]
+}
