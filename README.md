@@ -2,9 +2,15 @@
 
 Maintained by [aipieksel](https://github.com/aipieksel). Upstream credits and licenses remain with their respective authors.
 
-A modular MCP gateway built specifically to give Grok controlled access to your own data and workflows.
+grok-mcp is a server that lets a Grok MCP client work with content and records you control. It exposes a small set of tools for finding content, recording workflow events, and saving profile-scoped notes. That gives an assistant a defined data boundary and a reliable history of what happened, instead of asking it to remember prior actions.
 
-This is intentionally **not** an X-posting bot and is **not** tied to WordPress. X/content automation is the first use case only. The project is structured as an MCP platform where capabilities are added as independent modules.
+Connect a content source, start the HTTP server, and give the MCP endpoint to a client. A content request can exclude items with a matching ledger event, while profile tokens keep each bot's saved records in its own workspace. One example is tracking articles already posted to X; the server does not post them itself. Additional capabilities can be added as independent modules.
+
+## How it works
+
+1. A client calls the `/mcp` endpoint and discovers the available tools.
+2. The content module reads local or remote JSON; the ledger records events about specific items.
+3. Optional bot profiles use their own tokens and storage area for `save`, `get`, `list`, and `search`.
 
 ## Current modules
 
